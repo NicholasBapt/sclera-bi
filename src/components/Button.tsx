@@ -12,7 +12,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-blue-base hover:bg-blue-dark",
-        sidebar: "bg-blue-dark hover:bg-blue-base",
+        sidebar: "bg-blue-dark hover:bg-blue-base w-full justify-start",
       },
       size: {
         md: "h-14 py-4 px-5",
@@ -38,7 +38,7 @@ export const buttonTextVariants = cva("", {
   variants: {
     variant: {
       primary: "text-white",
-      sidebar: "text-white",
+      sidebar: "text-white text-start",
     },
     size: {
       md: "text-[16px]",
@@ -58,8 +58,8 @@ export const buttonIconVariants = cva("transition", {
       sidebar: "fill-white",
     },
     size: {
-      md: "w-5 h-5",
-      sm: "w-4 h-4",
+      md: "w-6 h-6",
+      sm: "w-5 h-5",
     },
   },
   defaultVariants: {
