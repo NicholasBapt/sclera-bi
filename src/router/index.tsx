@@ -5,8 +5,19 @@ import { Funcionarios } from "../pages/Funcionarios";
 import { NotFound } from "../pages/NotFound";
 import { Dashboard } from "../pages/Dashboard";
 import { Contratos } from "../pages/Contratos";
+import { Login } from "../pages/Login";
+import AuthLayout from "../layouts/AuthLayout";
 
 export const router = createBrowserRouter([
+  {
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+    ],
+  },
   {
     path: "/",
     element: <MainLayout />,
