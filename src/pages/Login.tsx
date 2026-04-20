@@ -1,9 +1,9 @@
-import TextInput from "../components/FormComponents/Inputs/TextInput";
+import LoginFirstStep from "../components/LoginSteps/LoginFirstStep";
 
 export function Login() {
   return (
-    <div>
-      <TextInput />
+    <div className="flex flex-col justify-center justify-items-center p-4 border-blue-light border rounded">
+      <LoginFirstStep />
     </div>
   );
 }
