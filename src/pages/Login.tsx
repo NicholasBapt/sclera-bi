@@ -1,3 +1,9 @@
+import TextInput from "../components/FormComponents/Inputs/TextInput";
+
 export function Login() {
-  return <h1>Login</h1>;
+  return (
+    <div>
+      <TextInput />
+    </div>
+  );
 }
