@@ -13,7 +13,7 @@ export const buttonIconVariants = cva(
       variant: {
         primary: "bg-blue-base hover:bg-blue-dark",
         sidebar:
-          "relative h-12 mx-auto bg-blue-dark hover:bg-blue-base w-full hover:text-white rounded-4xl hover:rounded-xl",
+          "relative h-12 mx-auto bg-blue-dark hover:bg-blue-base w-full hover:text-white rounded-4xl hover:rounded",
       },
       size: {
         md: "h-14 p-4",
@@ -58,6 +58,7 @@ export const tooltipVariants = cva(
     variants: {
       variant: {
         primary: "text-white",
+        sidebar: "",
       },
     },
     defaultVariants: {

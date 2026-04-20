@@ -3,9 +3,10 @@ import TodosFunc from "../assets/icons/TodosFunc.svg?react";
 import ContratosIcon from "../assets/icons/ContAtv.svg?react";
 import { cva, type VariantProps } from "class-variance-authority";
 import ButtonIcon from "./IconButton";
+import { Link } from "react-router-dom";
 
 export const sidebarVariants = cva(
-  "fixed top-3 bottom-3 left-3 m-0 p-2 rounded shadow-lg",
+  "top-3 bottom-3 left-3 m-0 p-2 rounded shadow-lg",
   {
     variants: {
       variant: {
@@ -32,24 +33,30 @@ export default function Sidebar({
     <aside className={sidebarVariants({ variant, className })} {...props}>
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col gap-2">
-          <ButtonIcon
-            icon={Dashboard}
-            size={"md"}
-            variant={"sidebar"}
-            text={"Dashboard"}
-          />
-          <ButtonIcon
-            icon={TodosFunc}
-            size={"md"}
-            variant={"sidebar"}
-            text={"Funcionários"}
-          />
-          <ButtonIcon
-            icon={ContratosIcon}
-            size={"md"}
-            variant={"sidebar"}
-            text={"Contratos"}
-          />
+          <Link to="/dashboard">
+            <ButtonIcon
+              icon={Dashboard}
+              size={"md"}
+              variant={"sidebar"}
+              text={"Dashboard"}
+            />
+          </Link>
+          <Link to="/funcionarios">
+            <ButtonIcon
+              icon={TodosFunc}
+              size={"md"}
+              variant={"sidebar"}
+              text={"Funcionários"}
+            />
+          </Link>
+          <Link to="/contratos">
+            <ButtonIcon
+              icon={ContratosIcon}
+              size={"md"}
+              variant={"sidebar"}
+              text={"Contratos"}
+            />
+          </Link>
         </div>
       </div>
     </aside>
