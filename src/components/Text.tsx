@@ -4,8 +4,10 @@ import { cva, type VariantProps } from "class-variance-authority";
 export const textVariants = cva("font-sans text-white", {
   variants: {
     variant: {
-      "head-lg-bold": "text-2xl font-semibold",
+      "head-lg": "text-3xl",
+      "head-lg-bold": "text-3xl font-semibold",
       "head-md-regular": "text-sm",
+      "body-sm": "text-sm leading-5",
       "body-sm-bold": "text-sm leading-5 font-semibold",
       "body-md": "text-base  leading-6 font-normal",
       "body-md-bold": "text-base leading-6 font-semibold",
