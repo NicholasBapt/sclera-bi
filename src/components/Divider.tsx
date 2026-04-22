@@ -10,7 +10,7 @@ export const buttonVariants = cva(
         primary: "bg-blue-light",
       },
       size: {
-        md: "h-px my-6",
+        md: "h-px my-2",
         sm: "h-1",
       },
     },

@@ -5,7 +5,7 @@ import TextInput from "./TextInput";
 export const inputFieldVariants = cva("flex flex-col gap-0.5", {
   variants: {
     variant: {
-      regular: "mb-2",
+      regular: "",
       last: "mb-0",
     },
   },

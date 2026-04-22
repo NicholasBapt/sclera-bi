@@ -13,10 +13,12 @@ export const buttonVariants = cva(
       variant: {
         primary: "bg-blue-base hover:bg-blue-dark",
         sidebar: "bg-blue-dark hover:bg-blue-base w-full justify-start",
+        textOnly: "",
       },
       size: {
         md: "h-14 py-4 px-5",
         sm: "h-10 px-4 p-2",
+        textOnlysm: "p-0",
       },
       disabled: {
         true: "opacity-50 pointer-events-none",
@@ -39,10 +41,12 @@ export const buttonTextVariants = cva("", {
     variant: {
       primary: "text-white",
       sidebar: "text-white text-start",
+      textOnly: "hover:text-blue-light",
     },
     size: {
       md: "text-[16px]",
       sm: "text-[14px]",
+      textOnlysm: "text-[14px] font-bold",
     },
   },
   defaultVariants: {
@@ -56,10 +60,12 @@ export const buttonIconVariants = cva("transition", {
     variant: {
       primary: "fill-white",
       sidebar: "fill-white",
+      textOnly: "",
     },
     size: {
       md: "w-6 h-6",
       sm: "w-5 h-5",
+      textOnlysm: "w-5 h-5",
     },
   },
   defaultVariants: {
@@ -81,12 +87,13 @@ export default function Button({
   disabled,
   className,
   children,
+  border,
   icon: IconComponent,
   ...props
 }: ButtonProps) {
   return (
     <button
-      className={buttonVariants({ variant, size, disabled, className })}
+      className={buttonVariants({ variant, size, disabled, border, className })}
       {...props}
     >
       {IconComponent && (
