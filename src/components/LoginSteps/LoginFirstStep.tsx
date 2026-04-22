@@ -5,9 +5,9 @@ import InputCheckbox from "../FormComponents/Inputs/InputCheckbox";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 
-interface LoginFirstStepProps extends React.ComponentProps<"section"> {}
-
-export default function LoginFirstStep({ ...props }: LoginFirstStepProps) {
+export default function LoginFirstStep({
+  ...props
+}: React.ComponentProps<"section">) {
   return (
     <section className="w-full flex flex-col justify-center gap-3" {...props}>
       <div className="flex flex-col">
