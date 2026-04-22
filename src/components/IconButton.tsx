@@ -13,7 +13,7 @@ export const buttonIconVariants = cva(
       variant: {
         primary: "bg-blue-base hover:bg-blue-dark",
         sidebar:
-          "relative h-12 mx-auto bg-blue-dark hover:bg-blue-base w-full hover:text-white rounded-4xl hover:rounded",
+          "relative h-12 mx-auto bg-blue-dark hover:bg-blue-base active:bg-blue-light w-full hover:text-white rounded-4xl hover:rounded",
       },
       size: {
         md: "h-14 p-4",

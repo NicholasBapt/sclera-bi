@@ -11,7 +11,7 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-blue-base hover:bg-blue-dark",
+        primary: "bg-blue-base hover:bg-blue-dark active:bg-cloudy-light",
         sidebar: "bg-blue-dark hover:bg-blue-base w-full justify-start",
         textOnly: "",
       },

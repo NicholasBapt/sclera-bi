@@ -30,16 +30,14 @@ export default function LoginFirstStep({ ...props }: LoginFirstStepProps) {
           <InputCheckbox />
           <Text variant="body-sm">Lembrar de mim?</Text>
         </label>
-        <Link
-          to="/"
-          className="text-white hover:text-blue-light text-[14px] font-semibold"
-        >
+        <Link to="/" className="text-white hover:text-blue-light text-[14px]">
           Esqueci minha senha
         </Link>
       </div>
       <Button border={true} size="sm">
         Login
       </Button>
+      <Divider />
       <div className="gap-1 flex justify-center">
         <Text variant="body-sm">Não possui uma conta?</Text>
         <Link
