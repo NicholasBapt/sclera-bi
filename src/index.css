@@ -18,3 +18,13 @@
 
   --shadow-sm: 0px 4px 8px 0px rgba(54, 23, 45, 0.05);
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--color-blue-light);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-cloudy-base) inset;
+  caret-color: var(--color-blue-light);
+  transition: background-color 9999s ease-in-out 0s;
+}

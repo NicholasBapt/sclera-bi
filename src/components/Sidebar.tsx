@@ -57,6 +57,14 @@ export default function Sidebar({
               text={"Contratos"}
             />
           </Link>
+          <Link to="/login">
+            <ButtonIcon
+              icon={ContratosIcon}
+              size={"md"}
+              variant={"sidebar"}
+              text={"Login"}
+            />
+          </Link>
         </div>
       </div>
     </aside>
