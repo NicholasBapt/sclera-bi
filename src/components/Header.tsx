@@ -17,16 +17,12 @@ export const headerVariants = cva("pl-4 flex flex-col w-full justify-start", {
   },
 });
 
-interface SiderbarProps
+interface HeaderProps
   extends VariantProps<typeof headerVariants>, React.ComponentProps<"header"> {
   as?: keyof React.JSX.IntrinsicElements;
 }
 
-export default function Header({
-  variant,
-  className,
-  ...props
-}: SiderbarProps) {
+export default function Header({ variant, className, ...props }: HeaderProps) {
   return (
     <header className={headerVariants({ variant, className })} {...props}>
       <div className="flex items-center gap-3 justify-end">
