@@ -1,11 +1,13 @@
-import Dashboard from "../assets/icons/Dashboard.svg?react";
 import TodosFunc from "../assets/icons/TodosFunc.svg?react";
+import Bell from "../assets/icons/Bell.svg?react";
+import User from "../assets/icons/User.svg?react";
 import { cva, type VariantProps } from "class-variance-authority";
 import ButtonIcon from "./IconButton";
 import { Link } from "react-router-dom";
 import Divider from "./Divider";
+import Text from "./Text";
 
-export const headerVariants = cva("", {
+export const headerVariants = cva("pl-4 flex flex-col w-full justify-start", {
   variants: {
     variant: {
       primary: "",
@@ -28,17 +30,19 @@ export default function Header({
 }: SiderbarProps) {
   return (
     <header className={headerVariants({ variant, className })} {...props}>
-      <div className="flex flex-col w-full justify-end h-full border-b-blue-light">
-        <div className="flex flex-row justify-end gap-2">
-          <Link to="/dashboard">
-            <ButtonIcon icon={Dashboard} size={"sm"} variant={"header"} />
-          </Link>
-          <Link to="/funcionarios">
-            <ButtonIcon icon={TodosFunc} size={"sm"} variant={"header"} />
+      <div className="flex items-center gap-3 justify-end">
+        <div className="flex flex-row justify-end gap-2 ">
+          <ButtonIcon icon={Bell} size={"sm"} variant={"header"} />
+          <Link to="/user">
+            <ButtonIcon icon={User} size={"sm"} variant={"header"} />
           </Link>
         </div>
-        <Divider className="mt-3" />
+        <div className="flex flex-col">
+          <Text variant="body-sm-bold">Nicholas Baptista</Text>
+          <Text variant="body-sm">nicholas.i</Text>
+        </div>
       </div>
+      <Divider variant="secondary" className="mt-3" />
     </header>
   );
 }

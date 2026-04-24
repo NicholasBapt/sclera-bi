@@ -8,6 +8,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-blue-light",
+        secondary: "bg-blue-base",
       },
       size: {
         md: "h-px my-2",
