@@ -1,4 +1,3 @@
-import TodosFunc from "../assets/icons/TodosFunc.svg?react";
 import Bell from "../assets/icons/Bell.svg?react";
 import User from "../assets/icons/User.svg?react";
 import { cva, type VariantProps } from "class-variance-authority";
