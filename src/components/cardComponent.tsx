@@ -1,4 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import Text from "./Text";
+import Divider from "./Divider";
 
 export const cardContainerVariants = cva("border rounded p-2", {
   variants: {
@@ -25,7 +27,9 @@ export default function CardComponent({
 }: HeaderProps) {
   return (
     <div className={cardContainerVariants({ variant, className })} {...props}>
-      <span>cardcomponent</span>
+      <Text>Card Component</Text>
+      <Divider />
+      <Text> Data </Text>
     </div>
   );
 }
