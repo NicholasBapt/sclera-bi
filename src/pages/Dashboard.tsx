@@ -1,3 +1,5 @@
+import CardComponent from "../components/cardComponent";
+
 export function Dashboard() {
-  return <h1>Dashboard</h1>;
+  return <CardComponent />;
 }
