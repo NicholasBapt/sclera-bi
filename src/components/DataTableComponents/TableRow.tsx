@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 export const tableRowVariants = cva("", {
   variants: {
     variant: {
-      primary: "odd:bg even:bg-cloudy-dark",
+      primary: "even:bg-blue-dark odd:bg",
     },
   },
   defaultVariants: {
