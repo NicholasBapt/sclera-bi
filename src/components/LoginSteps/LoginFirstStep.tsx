@@ -11,7 +11,7 @@ export default function LoginFirstStep({
   return (
     <section className="w-full flex flex-col justify-center gap-3" {...props}>
       <div className="flex flex-col">
-        <Text variant={"head-lg"}>Boas vindas</Text>
+        <Text variant={"heading-lg"}>Boas vindas</Text>
         <Text variant={"body-md"}>Realize seu login abaixo</Text>
       </div>
       <Divider />

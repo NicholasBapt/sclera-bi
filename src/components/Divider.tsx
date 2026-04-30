@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const buttonVariants = cva(
+export const dividerVariants = cva(
   `
     flex items-center justify-center `,
   {
@@ -23,7 +23,7 @@ export const buttonVariants = cva(
 );
 
 interface DividerProps
-  extends React.ComponentProps<"div">, VariantProps<typeof buttonVariants> {}
+  extends React.ComponentProps<"div">, VariantProps<typeof dividerVariants> {}
 
 export default function Divider({
   variant,
@@ -33,7 +33,7 @@ export default function Divider({
 }: DividerProps) {
   return (
     <div
-      className={buttonVariants({ variant, size, className })}
+      className={dividerVariants({ variant, size, className })}
       {...props}
     ></div>
   );

@@ -51,23 +51,6 @@ export const buttonTextVariants = cva("", {
   },
 });
 
-export const buttonIconVariants = cva("transition", {
-  variants: {
-    variant: {
-      primary: "fill-white",
-      sidebar: "fill-white",
-    },
-    size: {
-      md: "w-6 h-6",
-      sm: "w-5 h-5",
-    },
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "md",
-  },
-});
-
 interface ButtonProps
   extends
     Omit<React.ComponentProps<"button">, "size" | "disabled">,
@@ -91,10 +74,7 @@ export default function Button({
       {...props}
     >
       {IconComponent && (
-        <Icon
-          svg={IconComponent}
-          className={buttonIconVariants({ variant, size })}
-        />
+        <Icon svg={IconComponent} variant={variant} size={size} />
       )}
       <Text className={buttonTextVariants({ variant, size })}>{children}</Text>
     </button>

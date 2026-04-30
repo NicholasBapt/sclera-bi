@@ -6,6 +6,7 @@ export const cardContainerVariants = cva("border rounded p-2", {
   variants: {
     variant: {
       primary: "border-blue-light bg-blue-base",
+      secondary: "border-blue-base bg-cloudy-light",
     },
   },
   defaultVariants: {
@@ -13,7 +14,7 @@ export const cardContainerVariants = cva("border rounded p-2", {
   },
 });
 
-interface HeaderProps
+interface CardContainerProps
   extends
     VariantProps<typeof cardContainerVariants>,
     React.ComponentProps<"div"> {
@@ -23,13 +24,14 @@ interface HeaderProps
 export default function CardComponent({
   variant,
   className,
+  children,
   ...props
-}: HeaderProps) {
+}: CardContainerProps) {
   return (
     <div className={cardContainerVariants({ variant, className })} {...props}>
-      <Text>Card Component</Text>
-      <Divider />
-      <Text> Data </Text>
+      <Text variant="body-md-bold">Card Component</Text>
+      <Divider variant={variant} />
+      <div>{children}</div>
     </div>
   );
 }

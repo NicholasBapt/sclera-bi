@@ -37,40 +37,6 @@ export const buttonIconVariants = cva(
   },
 );
 
-export const iconVariants = cva("transition", {
-  variants: {
-    variant: {
-      primary: "fill-white",
-      sidebar: "fill-blue-light group-hover:fill-white",
-      header: "fill-blue-dark group-hover:fill-white",
-    },
-    size: {
-      md: "w-6 h-6",
-      sm: "w-5 h-5",
-    },
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "md",
-  },
-});
-
-export const tooltipVariants = cva(
-  "absolute w-auto p-2 m-2 min-w-max left-16 rounded-md shadow-md text-white bg-blue-base text-xs font-bold transition-all duration-300 scale-0 group-hover:scale-100 origin-left",
-  {
-    variants: {
-      variant: {
-        primary: "text-white",
-        sidebar: "",
-        header: "",
-      },
-    },
-    defaultVariants: {
-      variant: "primary",
-    },
-  },
-);
-
 interface ButtonProps
   extends
     Omit<React.ComponentProps<"button">, "size" | "disabled">,
@@ -94,11 +60,9 @@ export default function ButtonIcon({
       {...props}
     >
       {IconComponent && (
-        <Icon svg={IconComponent} className={iconVariants({ variant, size })} />
+        <Icon svg={IconComponent} variant={variant} size={size} />
       )}
-      {tooltip && (
-        <Tooltip text={tooltip} className={tooltipVariants({ className })} />
-      )}
+      {tooltip && <Tooltip text={tooltip} variant={variant} />}
     </button>
   );
 }

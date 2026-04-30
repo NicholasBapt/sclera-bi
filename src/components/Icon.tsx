@@ -1,14 +1,25 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const iconVariants = cva("", {
+export const iconVariants = cva("transition", {
   variants: {
+    variant: {
+      primary: "fill-white",
+      sidebar: "fill-blue-light group-hover:fill-white",
+      header: "fill-blue-dark group-hover:fill-white",
+    },
+    size: {
+      md: "w-6 h-6",
+      sm: "w-5 h-5",
+    },
     animate: {
       false: "",
       true: "animate-spin",
     },
   },
   defaultVariants: {
+    variant: "primary",
+    size: "md",
     animate: false,
   },
 });
@@ -20,11 +31,16 @@ interface IconProps
 
 export default function Icon({
   svg: SvgComponent,
+  variant,
+  size,
   animate,
   className,
   ...props
 }: IconProps) {
   return (
-    <SvgComponent className={iconVariants({ animate, className })} {...props} />
+    <SvgComponent
+      className={iconVariants({ variant, size, animate, className })}
+      {...props}
+    />
   );
 }
