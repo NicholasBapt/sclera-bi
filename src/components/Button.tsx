@@ -13,10 +13,13 @@ export const buttonVariants = cva(
       variant: {
         primary: "bg-blue-base hover:bg-blue-dark active:bg-cloudy-light",
         sidebar: "bg-blue-dark hover:bg-blue-base w-full justify-start",
+        pagination:
+          "bg-cloudy-light hover:bg-cloudy-base active:bg-blue-dark border-blue-light border",
       },
       size: {
         md: "h-14 py-4 px-5",
-        sm: "h-10 px-4 p-2",
+        sm: "h-10 px-3 p-2",
+        xsm: "h-6 px-2 p-2",
       },
       disabled: {
         true: "opacity-50 pointer-events-none",
@@ -39,10 +42,12 @@ export const buttonTextVariants = cva("", {
     variant: {
       primary: "text-white",
       sidebar: "text-white text-start",
+      pagination: "text-white",
     },
     size: {
       md: "text-[16px]",
       sm: "text-[14px]",
+      xsm: "text-[12px]",
     },
   },
   defaultVariants: {

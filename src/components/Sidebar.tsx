@@ -19,7 +19,7 @@ export const sidebarVariants = cva(
   },
 );
 
-interface SiderbarProps
+interface SidebarProps
   extends VariantProps<typeof sidebarVariants>, React.ComponentProps<"aside"> {
   as?: keyof React.JSX.IntrinsicElements;
 }
@@ -28,7 +28,7 @@ export default function Sidebar({
   variant,
   className,
   ...props
-}: SiderbarProps) {
+}: SidebarProps) {
   return (
     <aside className={sidebarVariants({ variant, className })} {...props}>
       <div className="flex flex-col justify-between h-full">

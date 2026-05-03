@@ -7,10 +7,12 @@ export const iconVariants = cva("transition", {
       primary: "fill-white",
       sidebar: "fill-blue-light group-hover:fill-white",
       header: "fill-blue-dark group-hover:fill-white",
+      pagination: "fill-white",
     },
     size: {
       md: "w-6 h-6",
       sm: "w-5 h-5",
+      xsm: "w-3 h-3",
     },
     animate: {
       false: "",
