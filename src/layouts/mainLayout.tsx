@@ -10,7 +10,7 @@ export default function MainLayout() {
       <div className="flex-1 flex flex-col">
         <Header />
 
-        <main className="p-4">
+        <main className="pl-4 py-2">
           <Outlet />
         </main>
       </div>
