@@ -3,7 +3,7 @@ import Text from "./Text";
 import Divider from "./Divider";
 
 export const cardContainerVariants = cva(
-  "border rounded p-2 w-full justify-center items-center",
+  "border rounded p-2 w-full justify-center items-center shadow-2xl",
   {
     variants: {
       variant: {

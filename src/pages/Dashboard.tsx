@@ -4,6 +4,7 @@ import DataTable from "../components/DataTableComponents/DataTable";
 import SimpleBarChart from "../components/Charts/SimpleBarChart";
 import CardsContainer from "../components/CardsContainer";
 import Text from "../components/Text";
+import SimpleLineChart from "../components/Charts/SimpleLineChart";
 
 export function Dashboard() {
   return (
@@ -25,6 +26,9 @@ export function Dashboard() {
         </CardComponent>
       </CardsContainer>
       <CardComponent title="Payroll cost over time" variant={"secondary"}>
+        <SimpleLineChart />
+      </CardComponent>
+      <CardComponent title="Employees by Department" variant={"secondary"}>
         <SimpleBarChart />
       </CardComponent>
       <CardComponent variant={"secondary"} title={"All Employees"}>

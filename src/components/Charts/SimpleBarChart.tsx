@@ -9,15 +9,19 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Jan", value: 400 },
-  { name: "Feb", value: 300 },
-  { name: "Mar", value: 600 },
-  { name: "Apr", value: 800 },
+  { name: "Engineering", value: 42 },
+  { name: "Sales", value: 35 },
+  { name: "Marketing", value: 18 },
+  { name: "Human Resources", value: 12 },
+  { name: "Finance", value: 15 },
+  { name: "Customer Support", value: 28 },
+  { name: "Operations", value: 22 },
+  { name: "Product", value: 16 },
 ];
 
 export default function SimpleBarChart() {
   return (
-    <div className="w-full h-60 rounded-lg pt-2">
+    <div className="w-full h-60 rounded-lg pt-2 **:outline-none" tabIndex={-1}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
@@ -29,12 +33,33 @@ export default function SimpleBarChart() {
             dataKey="name"
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 12 }}
+            tick={{ fontSize: 12, fill: "#fff" }}
           />
 
-          <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12 }} />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            tick={{ fontSize: 12, fill: "#fff" }}
+          />
 
-          <Tooltip />
+          <Tooltip
+            cursor={false}
+            contentStyle={{
+              backgroundColor: "#1f1f1f",
+              border: "1px solid #307b90",
+              borderRadius: "8px",
+              color: "#fff",
+              fontSize: "12px",
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
+            }}
+            labelStyle={{
+              color: "#fff",
+              fontWeight: 600,
+            }}
+            itemStyle={{
+              color: "#8ccfe0",
+            }}
+          />
 
           <Bar dataKey="value" fill="#8ccfe0" radius={[6, 6, 0, 0]} />
         </BarChart>
