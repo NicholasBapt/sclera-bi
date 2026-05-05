@@ -24,22 +24,20 @@ export function Dashboard() {
           <Text variant={"heading-lg"}>asd</Text>
         </CardComponent>
       </CardsContainer>
-      <CardsContainer>
-        <CardComponent variant={"secondary"} title={"Staff"}>
-          <DataTable
-            columns={["Name", "Contact", "Department", "Role"]}
-            rows={[
-              ["Adriane", "adriane@procob.com", "Sales", "Seller"],
-              ["Daiana", "daiana@procob.com", "Sales", "Seller"],
-              ["Diemes", "diemes@procob.com", "Sales", "Seller"],
-              ["Tayna", "tayna@procob.com", "Sales", "Seller"],
-            ]}
-          />
-          <Pagination />
-        </CardComponent>
-      </CardsContainer>
       <CardComponent title="Random Graph for now" variant={"secondary"}>
         <SimpleBarChart />
+      </CardComponent>
+      <CardComponent variant={"secondary"} title={"Staff"}>
+        <DataTable
+          columns={["Name", "Contact", "Department", "Role"]}
+          rows={[
+            ["Adriane", "adriane@procob.com", "Sales", "Seller"],
+            ["Daiana", "daiana@procob.com", "Sales", "Seller"],
+            ["Diemes", "diemes@procob.com", "Sales", "Seller"],
+            ["Tayna", "tayna@procob.com", "Sales", "Seller"],
+          ]}
+        />
+        <Pagination />
       </CardComponent>
     </div>
   );
