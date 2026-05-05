@@ -4,7 +4,7 @@ export const cardsContainerVariants = cva("", {
   variants: {
     variant: {
       primary: "",
-      secondary: "flex-row flex gap-3",
+      secondary: "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4",
     },
   },
   defaultVariants: {

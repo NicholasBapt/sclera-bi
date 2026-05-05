@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const textVariants = cva("font-sans text-white", {
+export const textVariants = cva("font-sans", {
   variants: {
     variant: {
       "heading-lg": "text-3xl font-semibold",
@@ -12,9 +12,14 @@ export const textVariants = cva("font-sans text-white", {
       "body-sm": "text-sm leading-5",
       "body-sm-bold": "text-sm leading-5 font-semibold",
     },
+    textColor: {
+      primary: "text-white",
+      secondary: "text-blue-light",
+    },
   },
   defaultVariants: {
     variant: "body-md",
+    textColor: "primary",
   },
 });
 
@@ -29,12 +34,13 @@ export default function Text({
   variant,
   className,
   children,
+  textColor,
   ...props
 }: TextProps) {
   return React.createElement(
     as,
     {
-      className: textVariants({ variant, className }),
+      className: textVariants({ variant, className, textColor }),
       ...props,
     },
     children,

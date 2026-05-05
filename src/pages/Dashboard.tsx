@@ -10,7 +10,9 @@ export function Dashboard() {
     <div className="flex flex-col gap-3">
       <CardsContainer variant={"secondary"}>
         <CardComponent title="Custo Mensal de Folha">
-          <Text variant={"heading-lg"}>asd</Text>
+          <Text textColor={"secondary"} variant={"heading-lg"}>
+            asd
+          </Text>
         </CardComponent>
         <CardComponent variant={"secondary"} title="Title 1">
           <Text variant={"heading-lg"}>asd</Text>
