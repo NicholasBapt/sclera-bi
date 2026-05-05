@@ -9,25 +9,25 @@ export function Dashboard() {
   return (
     <div className="flex flex-col gap-3">
       <CardsContainer variant={"secondary"}>
-        <CardComponent title="Custo Mensal de Folha">
+        <CardComponent title="Monthly payroll cost">
           <Text textColor={"secondary"} variant={"heading-lg"}>
             asd
           </Text>
         </CardComponent>
-        <CardComponent variant={"secondary"} title="Title 1">
+        <CardComponent variant={"secondary"} title="Total employees">
           <Text variant={"heading-lg"}>asd</Text>
         </CardComponent>
-        <CardComponent variant={"secondary"} title="Title 1">
+        <CardComponent variant={"secondary"} title="Turnover rate">
           <Text variant={"heading-lg"}>asd</Text>
         </CardComponent>
-        <CardComponent variant={"secondary"} title="Title 1">
+        <CardComponent variant={"secondary"} title="Active contracts">
           <Text variant={"heading-lg"}>asd</Text>
         </CardComponent>
       </CardsContainer>
-      <CardComponent title="Random Graph for now" variant={"secondary"}>
+      <CardComponent title="Payroll cost over time" variant={"secondary"}>
         <SimpleBarChart />
       </CardComponent>
-      <CardComponent variant={"secondary"} title={"Staff"}>
+      <CardComponent variant={"secondary"} title={"All Employees"}>
         <DataTable
           columns={["Name", "Contact", "Department", "Role"]}
           rows={[
