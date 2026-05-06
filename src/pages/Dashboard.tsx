@@ -1,10 +1,12 @@
 import CardComponent from "../components/cardComponent";
-import Pagination from "../components/Pagination";
 import DataTable from "../components/DataTableComponents/DataTable";
 import SimpleBarChart from "../components/Charts/SimpleBarChart";
 import CardsContainer from "../components/CardsContainer";
 import Text from "../components/Text";
 import SimpleLineChart from "../components/Charts/SimpleLineChart";
+import employeesTable from "../data/dashboardEmployees.json";
+import payrollCostOverTime from "../data/payrollCostOverTime.json";
+import employeesByDepartment from "../data/employeesByDepartment.json";
 
 export function Dashboard() {
   return (
@@ -25,23 +27,23 @@ export function Dashboard() {
           <Text variant={"heading-lg"}>asd</Text>
         </CardComponent>
       </CardsContainer>
-      <CardComponent title="Payroll cost over time" variant={"secondary"}>
-        <SimpleLineChart />
-      </CardComponent>
-      <CardComponent title="Employees by Department" variant={"secondary"}>
-        <SimpleBarChart />
-      </CardComponent>
+      <CardsContainer variant={"tertiary"}>
+        <CardComponent title="Payroll cost over time" variant={"secondary"}>
+          <SimpleLineChart
+            data={payrollCostOverTime}
+            xDataKey="name"
+            yDataKey="payrollCost"
+          />
+        </CardComponent>
+        <CardComponent title="Employees by Department" variant={"secondary"}>
+          <SimpleBarChart data={employeesByDepartment} />
+        </CardComponent>
+      </CardsContainer>
       <CardComponent variant={"secondary"} title={"All Employees"}>
         <DataTable
-          columns={["Name", "Contact", "Department", "Role"]}
-          rows={[
-            ["Adriane", "adriane@procob.com", "Sales", "Seller"],
-            ["Daiana", "daiana@procob.com", "Sales", "Seller"],
-            ["Diemes", "diemes@procob.com", "Sales", "Seller"],
-            ["Tayna", "tayna@procob.com", "Sales", "Seller"],
-          ]}
+          columns={employeesTable.columns}
+          rows={employeesTable.rows}
         />
-        <Pagination />
       </CardComponent>
     </div>
   );

@@ -1,0 +1,14 @@
+[
+  { "name": "Jan", "payrollCost": 128000 },
+  { "name": "Feb", "payrollCost": 132500 },
+  { "name": "Mar", "payrollCost": 136200 },
+  { "name": "Apr", "payrollCost": 141800 },
+  { "name": "May", "payrollCost": 145300 },
+  { "name": "Jun", "payrollCost": 149700 },
+  { "name": "Jul", "payrollCost": 158400 },
+  { "name": "Aug", "payrollCost": 162900 },
+  { "name": "Sep", "payrollCost": 166500 },
+  { "name": "Oct", "payrollCost": 171200 },
+  { "name": "Nov", "payrollCost": 176800 },
+  { "name": "Dec", "payrollCost": 185600 }
+]

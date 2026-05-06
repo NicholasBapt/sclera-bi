@@ -8,22 +8,19 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { name: "Jan", payrollCost: 128000 },
-  { name: "Feb", payrollCost: 132500 },
-  { name: "Mar", payrollCost: 136200 },
-  { name: "Apr", payrollCost: 141800 },
-  { name: "May", payrollCost: 145300 },
-  { name: "Jun", payrollCost: 149700 },
-  { name: "Jul", payrollCost: 158400 },
-  { name: "Aug", payrollCost: 162900 },
-  { name: "Sep", payrollCost: 166500 },
-  { name: "Oct", payrollCost: 171200 },
-  { name: "Nov", payrollCost: 176800 },
-  { name: "Dec", payrollCost: 185600 },
-];
+type LineChartDataItem = Record<string, string | number>;
 
-export default function SimpleLineChart() {
+interface SimpleLineChartProps {
+  data: LineChartDataItem[];
+  xDataKey: string;
+  yDataKey: string;
+}
+
+export default function SimpleLineChart({
+  data,
+  xDataKey,
+  yDataKey,
+}: SimpleLineChartProps) {
   return (
     <div className="w-full h-60 rounded-lg pt-2 **:outline-none">
       <ResponsiveContainer width="100%" height="100%">
@@ -34,7 +31,7 @@ export default function SimpleLineChart() {
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
 
           <XAxis
-            dataKey="name"
+            dataKey={xDataKey}
             axisLine={false}
             tickLine={false}
             tick={{ fontSize: 12, fill: "#fff" }}
@@ -70,7 +67,7 @@ export default function SimpleLineChart() {
 
           <Line
             type="monotone"
-            dataKey="payrollCost"
+            dataKey={yDataKey}
             stroke="#8ccfe0"
             strokeWidth={2}
             dot={{

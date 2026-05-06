@@ -5,6 +5,7 @@ export const cardsContainerVariants = cva("", {
     variant: {
       primary: "",
       secondary: "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4",
+      tertiary: "grid grid-cols-1 gap-3 sm:grid-cols-1 lg:grid-cols-2",
     },
   },
   defaultVariants: {

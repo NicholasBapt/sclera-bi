@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+import Button from "../Button";
 import {
   Bar,
   BarChart,
@@ -8,23 +10,81 @@ import {
   YAxis,
 } from "recharts";
 
-const data = [
-  { name: "Engineering", value: 42 },
-  { name: "Sales", value: 35 },
-  { name: "Marketing", value: 18 },
-  { name: "Human Resources", value: 12 },
-  { name: "Finance", value: 15 },
-  { name: "Customer Support", value: 28 },
-  { name: "Operations", value: 22 },
-  { name: "Product", value: 16 },
-];
+interface BarChartDataItem {
+  name: string;
+  value: number;
+}
 
-export default function SimpleBarChart() {
+interface SimpleBarChartProps {
+  data: BarChartDataItem[];
+}
+
+export default function SimpleBarChart({ data }: SimpleBarChartProps) {
+  const chartContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isCompact, setIsCompact] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const itemsPerPage = 4;
+  const totalPages = Math.max(1, Math.ceil(data.length / itemsPerPage));
+
+  useEffect(() => {
+    const container = chartContainerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const updateLayout = () => {
+      setIsCompact(container.clientWidth < 520);
+    };
+
+    updateLayout();
+
+    const observer = new ResizeObserver(updateLayout);
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isCompact) {
+      setCurrentPage(0);
+      return;
+    }
+
+    if (currentPage > totalPages - 1) {
+      setCurrentPage(totalPages - 1);
+    }
+  }, [currentPage, isCompact, totalPages]);
+
+  const chartData = isCompact
+    ? data.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
+    : data;
+
+  const showPageControl = isCompact && totalPages > 1;
+  const isLastPage = currentPage === totalPages - 1;
+
+  const handlePageControlClick = () => {
+    if (isLastPage) {
+      setCurrentPage((previousPage) => Math.max(previousPage - 1, 0));
+      return;
+    }
+
+    setCurrentPage((previousPage) =>
+      Math.min(previousPage + 1, totalPages - 1),
+    );
+  };
+
   return (
-    <div className="w-full h-60 rounded-lg pt-2 **:outline-none" tabIndex={-1}>
+    <div
+      ref={chartContainerRef}
+      className="relative w-full h-60 rounded-lg pt-2 **:outline-none"
+      tabIndex={-1}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          data={data}
+          data={chartData}
           margin={{ top: 8, right: 18, left: -8, bottom: 0 }}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -64,6 +124,20 @@ export default function SimpleBarChart() {
           <Bar dataKey="value" fill="#8ccfe0" radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
+
+      {showPageControl && (
+        <Button
+          size="xsm"
+          variant="primary"
+          className={`absolute top-1/2 -translate-y-1/2 z-10 ${
+            isLastPage ? "left-0" : "right-0"
+          }`}
+          aria-label={isLastPage ? "Página anterior" : "Próxima página"}
+          onClick={handlePageControlClick}
+        >
+          {isLastPage ? "<" : ">"}
+        </Button>
+      )}
     </div>
   );
 }

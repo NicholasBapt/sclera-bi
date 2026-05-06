@@ -1,0 +1,10 @@
+[
+  { "name": "Engineering", "value": 42 },
+  { "name": "Sales", "value": 35 },
+  { "name": "Marketing", "value": 18 },
+  { "name": "H.R.", "value": 12 },
+  { "name": "Finance", "value": 15 },
+  { "name": "Support", "value": 28 },
+  { "name": "Operations", "value": 22 },
+  { "name": "Product", "value": 16 }
+]

@@ -3,7 +3,7 @@ import Button from "./Button";
 import Text from "./Text";
 
 export const paginationVariants = cva(
-  "flex gap-2 items-center justify-center w-full pt-2",
+  "grid grid-cols-[1fr_auto_1fr] items-center w-full px-2 pb-1 pt-3 gap-2",
   {
     variants: {
       variant: {
@@ -19,33 +19,82 @@ export const paginationVariants = cva(
 interface PaginationProps
   extends
     VariantProps<typeof paginationVariants>,
-    React.ComponentProps<"div"> {}
-
-const paginationItems = ["<", "1", "2", "3", ">"];
+    Omit<React.ComponentProps<"div">, "onChange"> {
+  startItem: number;
+  endItem: number;
+  totalItems: number;
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
 
 export default function Pagination({
+  startItem,
+  endItem,
+  totalItems,
+  currentPage,
+  totalPages,
+  onPageChange,
   variant,
   className,
   ...props
 }: PaginationProps) {
+  if (totalPages <= 1) {
+    return null;
+  }
+
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1,
+  );
+
   return (
     <div className={paginationVariants({ variant, className })} {...props}>
-      {paginationItems.map((item) => (
+      <div aria-hidden="true" />
+
+      <div className="flex items-center gap-2 justify-self-center">
         <Button
-          key={item}
           size="xsm"
           variant="pagination"
-          aria-label={
-            item === "<"
-              ? "Página anterior"
-              : item === ">"
-                ? "Próxima página"
-                : `Página ${item}`
-          }
+          disabled={currentPage === 1}
+          aria-label="Página anterior"
+          onClick={() => onPageChange(currentPage - 1)}
         >
-          <Text variant="body-sm-bold">{item}</Text>
+          {"<"}
         </Button>
-      ))}
+
+        {pageNumbers.map((pageNumber) => (
+          <Button
+            key={pageNumber}
+            size="xsm"
+            variant="pagination"
+            aria-label={`Página ${pageNumber}`}
+            aria-current={pageNumber === currentPage ? "page" : undefined}
+            className={
+              pageNumber === currentPage
+                ? "bg-blue-dark text-white hover:bg-blue-dark"
+                : undefined
+            }
+            onClick={() => onPageChange(pageNumber)}
+          >
+            {String(pageNumber)}
+          </Button>
+        ))}
+
+        <Button
+          size="xsm"
+          variant="pagination"
+          disabled={currentPage === totalPages}
+          aria-label="Próxima página"
+          onClick={() => onPageChange(currentPage + 1)}
+        >
+          {">"}
+        </Button>
+      </div>
+
+      <Text variant="body-sm" className="text-blue-dark justify-self-end">
+        {`Exibindo ${startItem}-${endItem} de ${totalItems}`}
+      </Text>
     </div>
   );
 }
