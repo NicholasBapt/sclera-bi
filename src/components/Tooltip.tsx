@@ -9,6 +9,7 @@ export const tooltipVariants = cva(
         primary: "text-white bg-blue-base",
         sidebar: "text-white bg-blue-base",
         header: "text-white bg-blue-base",
+        chartPagination: "",
       },
       animate: {
         false: "",

@@ -16,6 +16,7 @@ export const buttonIconVariants = cva(
           "relative h-12 mx-auto bg-blue-dark hover:bg-blue-base active:bg-blue-light w-full hover:text-white rounded-4xl hover:rounded",
         header:
           "mx-auto bg-blue-light hover:bg-blue-base active:bg-blue-light w-full hover:text-white rounded-4xl",
+        chartPagination: "",
       },
       size: {
         md: "h-14 w-14 p-4",

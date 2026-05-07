@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "../Button";
+import LeftArrow from "../assets/../../assets/icons/LeftArrow.svg?react";
+import RightArrow from "../assets/../../assets/icons/RightArrow.svg?react";
 import {
   Bar,
   BarChart,
@@ -9,6 +10,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import ButtonIcon from "../IconButton";
 
 interface BarChartDataItem {
   name: string;
@@ -126,17 +128,17 @@ export default function SimpleBarChart({ data }: SimpleBarChartProps) {
       </ResponsiveContainer>
 
       {showPageControl && (
-        <Button
-          size="xsm"
-          variant="primary"
+        <ButtonIcon
+          size="md"
+          variant="chartPagination"
+          icon={isLastPage ? LeftArrow : RightArrow}
           className={`absolute top-1/2 -translate-y-1/2 z-10 ${
-            isLastPage ? "left-0" : "right-0"
+            isLastPage ? "-left-3.5" : "-right-4.5"
           }`}
           aria-label={isLastPage ? "Página anterior" : "Próxima página"}
           onClick={handlePageControlClick}
-        >
-          {isLastPage ? "<" : ">"}
-        </Button>
+        />
+        // {isLastPage ? <LeftArrow /> : <RightArrow />}
       )}
     </div>
   );
