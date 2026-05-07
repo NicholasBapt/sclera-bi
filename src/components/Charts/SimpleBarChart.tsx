@@ -138,7 +138,6 @@ export default function SimpleBarChart({ data }: SimpleBarChartProps) {
           aria-label={isLastPage ? "Página anterior" : "Próxima página"}
           onClick={handlePageControlClick}
         />
-        // {isLastPage ? <LeftArrow /> : <RightArrow />}
       )}
     </div>
   );

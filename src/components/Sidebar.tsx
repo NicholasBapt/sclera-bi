@@ -6,7 +6,7 @@ import ButtonIcon from "./IconButton";
 import { Link } from "react-router-dom";
 
 export const sidebarVariants = cva(
-  "top-3 bottom-3 left-3 m-0 p-2 rounded shadow-lg",
+  "fixed top-3 bottom-3 left-3 m-0 p-2 rounded shadow-lg z-30",
   {
     variants: {
       variant: {

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 export const tableVariants = cva("w-full border-collapse text-left", {
   variants: {
     variant: {
-      primary: "w-full overflow-x-auto rounded",
+      primary: "rounded",
     },
   },
   defaultVariants: {
