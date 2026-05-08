@@ -19,6 +19,13 @@
   --shadow-sm: 0px 4px 8px 0px rgba(54, 23, 45, 0.05);
 }
 
+html,
+body,
+#root {
+  background-color: var(--color-cloudy-base);
+  min-height: 100vh;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
